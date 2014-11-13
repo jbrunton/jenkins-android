@@ -6,7 +6,9 @@ Initial setup taken from [here](http://pivotallabs.com/spinning-useful-vms-quick
 
 ## Usage
 
-Assuming you have Vagrant already installed:
+Assuming you have Vagrant and Bundler already installed:
 
-1. Clone the repo: ```git clone https://github.com/jbrunton/jenkins-android.git```
-2. Run locally with ```vagrant up```.
+1. Clone the repo: ```git clone https://github.com/jbrunton/jenkins-android.git```.
+2. Install the ruby dependencies with ```bundle install```.
+3. Install the puppet dependencies with ```librarian-puppet install```.
+4. Run locally with ```vagrant up```.
