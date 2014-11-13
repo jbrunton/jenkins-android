@@ -11,6 +11,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "hashicorp/precise32"
+  
+  config.vm.provision "puppet" do |puppet|
+      puppet.manifests_path = "manifests"
+      puppet.manifest_file  = "site.pp"
+      puppet.module_path = ['modules']
+  end
+
+  config.vm.network "forwarded_port", guest: 8080, host: 8042
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
